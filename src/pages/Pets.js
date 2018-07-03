@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Pet from './Pet';
 import {Link} from 'react-router-dom';
 
 class Pets extends Component {

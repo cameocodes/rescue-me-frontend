@@ -1,0 +1,15 @@
+.navlinks{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.rendered {
+    text-align: center;
+    padding-top: 50px;
+}
+
+p {
+    padding: 10px;
+}
