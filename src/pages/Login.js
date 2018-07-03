@@ -1,11 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class Login extends Component {
-  render() {
+export default function Login({handleSubmit}) {
     return (
-      <p>Login Page</p>
-    );
-  }
-}
+        <div className="login">
+          <h2>Login</h2>
+          <form onSubmit={(e) => {
+            e.preventDefault()
+            const form = e.target.elements
+            const email = form.email.value
+            const password = form.password.value
 
-export default Login;
+            if(email === '' || password === '') {
+                alert('please fill out the form')
+                return;
+            }
+
+            e.target.reset()
+            handleSubmit(email, password)
+          }}>
+            <p>
+              <label htmlFor="email">Email: </label>
+              <input type="email" name="email"/>
+            </p>
+
+            <p>
+              <label htmlFor="password">Password: </label>
+              <input type="password" name="password"/>
+            </p>
+
+            <p>
+              <input type="submit" value="Login"/>
+            </p>
+          </form>
+      </div>
+    )
+}

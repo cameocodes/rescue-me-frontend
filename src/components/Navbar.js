@@ -4,6 +4,7 @@ import Pets from "../pages/Pets";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
+import Pet from "../pages/Pet";
 
 const Navbar = () => (
     <Router>
@@ -18,9 +19,10 @@ const Navbar = () => (
         <hr/>
   
         <Route exact path="/" component={Home}/>
-        <Route path="/pets" component={Pets}/>
+        <Route exact path="/pets" component={Pets}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register} />
+        <Route path="/pets/:id" component={Pet} />
       </div>
     </Router>
   )
