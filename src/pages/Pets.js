@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
@@ -24,7 +24,9 @@ class Pets extends Component {
     const {pets} = this.state
         if(!pets) return <h3>Fetching pets...</h3>
 
-        return pets.map(pet => {
+        return <Fragment>
+          <h1>Pets</h1>
+          { pets.map(pet => {
           return <p key={pet._id}>
           {pet.breed} {pet.species}<br/>
           <Link 
@@ -35,7 +37,8 @@ class Pets extends Component {
           }}>
             <button>View Pet</button>
           </Link></p>
-        })
+        })}
+        </Fragment>
   }
 }
 
